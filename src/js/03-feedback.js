@@ -17,15 +17,15 @@ function onInputMessage(evt) {
     formData[evt.target.name] = evt.target.value;
       
     localStorage.setItem('feedback-form-state', JSON.stringify(formData));
-            
+               
 }
 getText()
 function getText() {
     const getItemData = JSON.parse(localStorage.getItem('feedback-form-state')) 
     
     if (getItemData) {
-        form.email.value = getItemData.email ;
-        form.message.value = getItemData.message ;
+        form.email.value = getItemData.email || "";
+        form.message.value = getItemData.message || "";
     }
     
   }
